@@ -9,7 +9,7 @@ Shader "Custom/Wireframe"
     {
         Tags {"RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
         LOD 100
-
+        Cull Off
         Pass
         {
             Name "Spatial Mapping Wireframe"
