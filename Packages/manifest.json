@@ -3,12 +3,11 @@
     {
       "name": "Keijiro",
       "url": "https://registry.npmjs.com",
-      "scopes": [
-        "jp.keijiro"
-      ]
+      "scopes": [ "jp.keijiro" ]
     }
   ],
   "dependencies": {
+    "jp.keijiro.lasp": "2.1.6",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "1.15.17",
