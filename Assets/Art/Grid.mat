@@ -123,7 +123,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WireThickness: 0
+    - _WireThickness: 500
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
