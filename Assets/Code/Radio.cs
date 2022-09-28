@@ -5,57 +5,114 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Radio : MonoBehaviour
 {
     // _________WIP__________
     public AudioImporter importer;
     public AudioSource source;
-    public AudioClip[] songs;
+    public List<string> songs;
+    bool finishedLoading = true;
 
     void Awake()
     {
         Debug.Log(Application.persistentDataPath + "/Music");
         Directory.CreateDirectory(Application.persistentDataPath + "/Music");
-        ImportFolder(Application.persistentDataPath + "/Music");
+        Directory.CreateDirectory(Application.persistentDataPath + "/Users");
+        songs = ImportFolder(Application.persistentDataPath + "/Music");
+        importer.Loaded += OnLoaded;
         
     }
 
     private void OnLoaded(AudioClip clip)
     {
-        songs.Append(clip);
+        if (songs.Count() > 1 && !source.isPlaying)
+        {
+            source.clip = clip;
+            source.Play();
+            finishedLoading = true;
+        }
+        
     }
     private void Update()
     {
-        if(songs.Count() > 1 && !source.isPlaying)
+        if (finishedLoading)
         {
-            source.clip = songs[Random.Range(0, songs.Length)];
-            source.Play();
+            if (songs != null ? songs.Count() > 1 : false)
+            {
+                if (source.clip)
+                {
+                    if (!source.isPlaying)
+                    {
+                        importer.Import(songs[Random.Range(0, songs.Count)]);
+                        finishedLoading = false;
+                    }
+
+                }
+                else
+                {
+                    importer.Import(songs[Random.Range(0, songs.Count)]);
+                    finishedLoading = false;
+                }
+            }
         }
     }
-    public async void ImportFolder(string path)
+    public bool TryImportFolder(string path, out List<string> output)
     {
+        output = new();
         foreach (string file in Directory.EnumerateFiles(path))
         {
             Debug.Log(file);
             switch (Path.GetExtension(file))
             {
-                case ".mp3": await new Task(() => Import(file, AudioType.MPEG)); break;
-                case ".ogg": await new Task(() => Import(file, AudioType.OGGVORBIS)); break;
-                case ".wav": await new Task(() => Import(file, AudioType.WAV)); break;
-                case ".aiff": await new Task(() => Import(file, AudioType.AIFF)); break;
-                case ".aif": await new Task(() => Import(file, AudioType.AIFF)); break;
-                case ".mod": await new Task(() => Import(file, AudioType.MOD)); break;
-                case ".it": await new Task(() => Import(file, AudioType.IT)); break;
-                case ".s3m": await new Task(() => Import(file, AudioType.S3M)); break;
-                case ".xm": await new Task(() => Import(file, AudioType.XM)); break;
+                case ".mp3":
+                case ".ogg":
+                case ".wav":
+                case ".aiff":
+                case ".aif":
+                case ".mod":
+                case ".it":
+                case ".s3m":
+                case ".xm":
+                    output.Add(file);
+                    break;
+
             }
         }
+        if (output.Count == 0)
+        {
+            output = null;
+            return false;
+        }
+        else return true;
+
     }
-    public void Import(string path, AudioType type)
+    public List<string> ImportFolder(string path)
     {
-        UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(path, type);
-        songs.Append(DownloadHandlerAudioClip.GetContent(www));
+        List<string> output = new();
+        foreach (string file in Directory.EnumerateFiles(path))
+        {
+            Debug.Log(file);
+            switch (Path.GetExtension(file))
+            {
+                case ".mp3":
+                case ".ogg":
+                case ".wav":
+                case ".aiff":
+                case ".aif":
+                case ".mod":
+                case ".it":
+                case ".s3m":
+                case ".xm":
+                    output.Add(file);
+                    break;
+
+            }
+        }
+        if (output.Count == 0) return null;
+        else return output;
+
     }
 
 }

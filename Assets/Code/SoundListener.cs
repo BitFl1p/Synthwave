@@ -49,10 +49,10 @@ public class SoundListener : MonoBehaviour
                         clipLoudness += samples <= 10 ? Mathf.Abs(sample) * samplePower : 0;
                         break;
                     case Pass.Mid:
-                        clipLoudness += samples <= 65 && samples <= 40 ? Mathf.Abs(sample) * samplePower : 0;
+                        clipLoudness += samples <= 70 && samples <= 50 ? Mathf.Abs(sample) * samplePower : 0;
                         break;
                     case Pass.High:
-                        clipLoudness += samples >= 65 ? Mathf.Abs(sample) * samplePower : 0;
+                        clipLoudness += samples >= 70 ? Mathf.Abs(sample) * samplePower : 0;
                         break;
                 }
                     
