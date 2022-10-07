@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.2721703, g: 0.047481883, b: 4.235352, a: 1}
+  m_IndirectSpecularColor: {r: 0.2721707, g: 0.04748196, b: 4.2353525, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1126,8 +1126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 185544387}
   - component: {fileID: 185544390}
-  - component: {fileID: 185544391}
   - component: {fileID: 185544392}
+  - component: {fileID: 185544393}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1162,68 +1162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &185544391
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185544386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9beda531928fc40968802117a5d256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RecenterTarget: 0
-  m_VerticalAxis:
-    Value: 0
-    m_SpeedMode: 1
-    m_MaxSpeed: 0.1
-    m_AccelTime: 0.1
-    m_DecelTime: 0.1
-    m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
-    m_InvertInput: 1
-    m_MinValue: -70
-    m_MaxValue: 70
-    m_Wrap: 0
-    m_Recentering:
-      m_enabled: 0
-      m_WaitTime: 1
-      m_RecenteringTime: 2
-      m_LegacyHeadingDefinition: -1
-      m_LegacyVelocityFilterStrength: -1
-  m_VerticalRecentering:
-    m_enabled: 0
-    m_WaitTime: 1
-    m_RecenteringTime: 2
-    m_LegacyHeadingDefinition: -1
-    m_LegacyVelocityFilterStrength: -1
-  m_HorizontalAxis:
-    Value: 0
-    m_SpeedMode: 1
-    m_MaxSpeed: 0.1
-    m_AccelTime: 0.1
-    m_DecelTime: 0.1
-    m_InputAxisName: Mouse X
-    m_InputAxisValue: 0
-    m_InvertInput: 0
-    m_MinValue: -180
-    m_MaxValue: 180
-    m_Wrap: 1
-    m_Recentering:
-      m_enabled: 0
-      m_WaitTime: 1
-      m_RecenteringTime: 2
-      m_LegacyHeadingDefinition: -1
-      m_LegacyVelocityFilterStrength: -1
-  m_HorizontalRecentering:
-    m_enabled: 0
-    m_WaitTime: 1
-    m_RecenteringTime: 2
-    m_LegacyHeadingDefinition: -1
-    m_LegacyVelocityFilterStrength: -1
-  m_ApplyBeforeBody: 0
 --- !u!114 &185544392
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1240,9 +1178,9 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -1267,6 +1205,33 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &185544393
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185544386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 7, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
 --- !u!4 &188935602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 87403507033f0034eab7ba172e32535d,
@@ -5560,16 +5525,16 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759983860}
-  m_Center: {x: 0, y: 0.0025, z: 0}
+  m_Center: {x: 0, y: 0.00125, z: 0}
   m_Radius: 0.003
   m_SuspensionSpring:
-    spring: 35000
-    damper: 0.0001
+    spring: 50000
+    damper: 10
     targetPosition: 0.5
-  m_SuspensionDistance: 0.005
+  m_SuspensionDistance: 0.0025
   m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.005
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -7293,8 +7258,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034339910}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -93.584885, y: 39.416485, z: -282.51007}
+  m_LocalRotation: {x: 0.056865312, y: 0.000000017312225, z: -9.860606e-10, w: 0.99838185}
+  m_LocalPosition: {x: -93.584885, y: 39.95356, z: -282.47946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7397,16 +7362,16 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037218159}
-  m_Center: {x: 0, y: 0.0025, z: 0}
+  m_Center: {x: 0, y: 0.00125, z: 0}
   m_Radius: 0.003
   m_SuspensionSpring:
-    spring: 35000
-    damper: 0.0001
+    spring: 50000
+    damper: 10
     targetPosition: 0.5
-  m_SuspensionDistance: 0.005
+  m_SuspensionDistance: 0.0025
   m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.005
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -9574,16 +9539,16 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474582618}
-  m_Center: {x: 0, y: 0.0025, z: 0}
+  m_Center: {x: 0, y: 0.00125, z: 0}
   m_Radius: 0.003
   m_SuspensionSpring:
-    spring: 35000
-    damper: 0.0001
+    spring: 50000
+    damper: 10
     targetPosition: 0.5
-  m_SuspensionDistance: 0.005
+  m_SuspensionDistance: 0.0025
   m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.005
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -10455,8 +10420,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576726152}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -93.584885, y: 39.416485, z: -282.51007}
+  m_LocalRotation: {x: 0.056865312, y: 0.000000017312225, z: -9.860606e-10, w: 0.99838185}
+  m_LocalPosition: {x: -93.584885, y: 39.95356, z: -282.47946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10956,16 +10921,16 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600366185}
-  m_Center: {x: 0, y: 0.0025, z: 0}
+  m_Center: {x: 0, y: 0.00125, z: 0}
   m_Radius: 0.003
   m_SuspensionSpring:
-    spring: 35000
-    damper: 0.0001
+    spring: 50000
+    damper: 10
     targetPosition: 0.5
-  m_SuspensionDistance: 0.005
+  m_SuspensionDistance: 0.0025
   m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.005
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -16261,6 +16226,7 @@ GameObject:
   - component: {fileID: 2140520963}
   - component: {fileID: 2140520964}
   - component: {fileID: 2140520965}
+  - component: {fileID: 2140520966}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -16347,6 +16313,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9567a270ac357ae4fac4e951deebf47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheels:
+  - {fileID: 1474582620}
+  - {fileID: 1600366187}
+  drag: 0
+  speed: 1000
+  steer: 50
+--- !u!114 &2140520966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140520960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d08de382a66c27c46b27f3bf69dd776e,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2146317746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c92bea14e5c4591408be760558da7b90,
